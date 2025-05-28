@@ -1,8 +1,13 @@
 [
   {
     "name": "Angela Annual Starlight",
-    "price": "Rp250.000",
-    "size": "M",
-    "image": "costumes/Angela-annual.jpg"
-  }
+    "image": "costumes/Angela-annual.jpg",
+    "category": "game",
+    "description": "Cosplay Character Game Mobile Legends: Bang Bang Hero: Angela",
+    "size": ["S", "M", "L"],
+    "price": 250000,
+    "onRent": false,
+    "rentCount": 1,
+    "rating": 4.5
+  },
 ]
