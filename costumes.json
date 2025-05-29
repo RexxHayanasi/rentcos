@@ -1,13 +1,11 @@
-[
   {
     "name": "Angela Annual Starlight",
     "image": "costume/Angela-annual.jpg",
     "category": "game",
     "description": "Cosplay Character Game Mobile Legends: Bang Bang Hero: Angela",
-    "size": ["S", "M", "L"],
+    "size": ["S", "M"],
     "price": 250000,
     "onRent": false,
     "rentCount": 1,
     "rating": 4.5
-  },
-]
+  }
