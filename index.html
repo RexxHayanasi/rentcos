@@ -3,204 +3,520 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pungkicosrent - Rental Cosplay Profesional</title>
-  <link rel="stylesheet" href="CSS/dashboard.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Pungki Cosplay Catalog | RENTAL COSPLAY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="costumes/styles.css" />
+  <link rel="icon" href="src/pungki.png" type="image/png">
+ <link rel="icon" href="src/favicon.ico" type="image/x-icon" sizes="16x16">
+ <link rel="apple-touch-icon" href="src/pungki.png">
+  <link rel="icon" type="image/x-icon" href="src/pungki.png">
 </head>
-<body class="page-dashboard">
-  <header class="main-header">
+<body>
+  <header class="header">
     <div class="header-content">
-      <h1 class="logo">Pungkicosrent</h1>
-      <p class="tagline">Rental Kostum Cosplay Berkualitas Premium</p>
-      <nav class="main-nav">
-        <a href="dashboard.html" class="active"><i class="fas fa-home"></i> Beranda</a>
-        <a href="#produk"><i class="fas fa-tshirt"></i> Kostum</a>
-        <a href="#tentang"><i class="fas fa-info-circle"></i> Tentang Kami</a>
-        <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
-        <a href="#promo"><i class="fas fa-tag"></i> Promo</a>
-      </nav>
+      <img src="src/pungki.png" alt="Logo Pungki Cosplay" class="logo" />
+      <div class="header-text">
+        <h1>Pungki Cosplay Catalog</h1>
+        <p>Sewa kostum karakter favoritmu dengan kualitas premium!</p>
+      </div>
     </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="#catalog"><i class="fas fa-tshirt"></i> Katalog</a></li>
+        <li><a href="#profit"><i class="fas fa-chart-line"></i> Keuntungan</a></li>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="dashboard-container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Rental Kostum Cosplay Terlengkap & Terpercaya</h2>
-        <p>Dapatkan pengalaman cosplay terbaik dengan kostum berkualitas tinggi dan harga terjangkau</p>
-        <a href="/catalog" class="cta-button">Lihat Katalog</a>
+  <div class="container">
+    <section id="dashboard" class="dashboard-section">
+      <h2 class="section-title"><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fas fa-tshirt"></i>
+          <div class="stat-value" id="total-costumes">0</div>
+          <div class="stat-label">Total Kostum</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-calendar-check"></i>
+          <div class="stat-value" id="active-rentals">0</div>
+          <div class="stat-label">Penyewaan Aktif</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-money-bill-wave"></i>
+          <div class="stat-value" id="monthly-profit">0</div>
+          <div class="stat-label">Keuntungan</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-star"></i>
+          <div class="stat-value" id="popular-items">0</div>
+          <div class="stat-label">Item Populer</div>
+        </div>
       </div>
     </section>
 
-    <!-- Keunggulan Kami -->
-    <section class="benefits">
-      <h2 class="section-title">Kenapa Memilih Pungkicosrent?</h2>
-      <div class="benefits-grid">
+    <section id="catalog" class="catalog-section">
+  <div class="section-header">
+    <h2 class="section-title"><i class="fas fa-tshirt"></i> Katalog Kostum</h2>
+    <div class="search-filter-container">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Cari kostum..." id="search-input" class="search-input">
+      </div>
+      <div class="filter-group">
+        <select id="category-filter" class="filter-select">
+          <option value="all">Semua Genre</option>
+          <option value="anime">Anime</option>
+          <option value="game">Game</option>
+          <option value="movie">Film</option>
+          <option value="comic">Komik</option>
+          <option value="original">Original</option>
+        </select>
+        <select id="size-filter" class="filter-select">
+          <option value="all">Semua Ukuran</option>
+          <option value="S">Small (S)</option>
+          <option value="M">Medium (M)</option>
+          <option value="L">Large (L)</option>
+          <option value="XL">X-Large (XL)</option>
+        </select>
+        <select id="price-filter" class="filter-select">
+          <option value="all">Semua Harga</option>
+          <option value="low">Rp < 200k</option>
+          <option value="medium">Rp 200k - 500k</option>
+          <option value="high">Rp > 500k</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="catalog-grid" id="catalog"></div>
+    </section>
+
+    <div class="bottom-sections">
+      <section id="profit" class="profit-section">
+  <h2 class="section-title"><i class="fas fa-gift"></i> Keuntungan & Promo Rental</h2>
+  <div class="benefits-container">
+    <div class="benefit-category">
+      <h3><i class="fas fa-medal"></i> Keunggulan Kami</h3>
+      <div class="benefit-grid">
         <div class="benefit-card">
-          <i class="fas fa-star"></i>
-          <h3>Kualitas Premium</h3>
-          <p>Kostum dibuat dengan bahan impor berkualitas tinggi dan detail akurat</p>
+          <i class="fas fa-check-circle"></i>
+          <h4>Kualitas Premium</h4>
+          <p>Kostum original dengan bahan berkualitas tinggi dan detail akurat</p>
         </div>
         <div class="benefit-card">
-          <i class="fas fa-tags"></i>
-          <h3>Harga Kompetitif</h3>
-          <p>Harga sewa terjangkau dengan berbagai pilihan paket</p>
+          <i class="fas fa-box-open"></i>
+          <h4>Paket Lengkap</h4>
+          <p>Sudah termasuk aksesoris, wig, dan properti pendukung</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-expand-arrows-alt"></i>
+          <h4>Size Variatif</h4>
+          <p>Tersedia berbagai ukuran dari S sampai XXL</p>
         </div>
         <div class="benefit-card">
           <i class="fas fa-broom"></i>
-          <h3>Perawatan Rutin</h3>
-          <p>Kostum selalu dicuci dan diperbaiki setelah setiap penyewaan</p>
-        </div>
-        <div class="benefit-card">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Garansi Kepuasan</h3>
-          <p>Garansi 100% jika kostum tidak sesuai deskripsi</p>
+          <h4>Gratis Perawatan</h4>
+          <p>Kostum selalu dicuci profesional setelah setiap pemakaian</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Promo Section -->
-    <section id="promo" class="promo-section">
-      <h2 class="section-title">Promo Spesial</h2>
-      <div class="promo-card">
-        <div class="promo-badge">HOT</div>
-        <h3>Paket 3 Hari Diskon 20%</h3>
-        <p>Sewa minimal 3 hari dapatkan diskon 20% untuk semua kostum</p>
-        <p class="promo-code">Gunakan kode: <strong>COS3DAY</strong></p>
+    <div class="benefit-category">
+      <h3><i class="fas fa-percentage"></i> Promo Spesial</h3>
+      <div class="promo-grid">
+        <div class="promo-card">
+          <div class="promo-badge">HOT</div>
+          <h4>Paket Combo</h4>
+          <p>Diskon 15% untuk sewa kostum + aksesoris</p>
+          <button class="promo-button">Lihat Syarat</button>
+        </div>
+        <div class="promo-card">
+          <div class="promo-badge">NEW</div>
+          <h4>Weekly Deal</h4>
+          <p>Sewa 5 hari gratis 2 hari (7 hari total)</p>
+          <button class="promo-button">Info Detail</button>
+        </div>
+        <div class="promo-card">
+          <div class="promo-badge">BEST</div>
+          <h4>Group Package</h4>
+          <p>Diskon 20% untuk sewa 3+ kostum sekaligus</p>
+          <button class="promo-button">Pesan Sekarang</button>
+        </div>
+        <div class="promo-card">
+          <div class="promo-badge">VIP</div>
+          <h4>Member Card</h4>
+          <p>Diskon 10% semua sewa setelah 5x transaksi</p>
+          <button class="promo-button">Daftar</button>
+        </div>
       </div>
-      <div class="promo-card">
-        <div class="promo-badge">NEW</div>
-        <h3>Member Baru Gratis 1 Hari</h3>
-        <p>Penyewa pertama mendapatkan tambahan 1 hari gratis</p>
-        <p class="promo-code">Gunakan kode: <strong>NEWCOS</strong></p>
-      </div>
-    </section>
+    </div>
 
-    <!-- Tentang Kami -->
-    <section id="tentang" class="about-section">
-      <h2 class="section-title">Tentang Pungkicosrent</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Pungkicosrent adalah penyedia jasa rental kostum cosplay profesional yang telah berdiri sejak 2018. Kami berkomitmen menyediakan kostum dengan kualitas terbaik dan detail yang akurat.</p>
-          <p>Kostum kami dibuat oleh tailor berpengalaman menggunakan bahan impor seperti katun Jepang, brokat Korea, dan bahan premium lainnya yang nyaman dipakai.</p>
-          <ul class="about-features">
-            <li><i class="fas fa-check"></i> Lebih dari 500+ koleksi kostum</li>
-            <li><i class="fas fa-check"></i> Update koleksi rutin setiap bulan</li>
-            <li><i class="fas fa-check"></i> Sistem booking online 24 jam</li>
-          </ul>
+    <div class="benefit-category">
+      <h3><i class="fas fa-star"></i> Layanan Tambahan</h3>
+      <div class="service-grid">
+        <div class="service-card">
+          <i class="fas fa-magic"></i>
+          <h4>Jasa Makeup</h4>
+          <p>Kerjasama dengan MUA profesional</p>
+          <p class="price">Mulai Rp 150.000</p>
         </div>
-        <div class="about-image">
-          <img src="https://via.placeholder.com/400x300" alt="Workshop Pungkicosrent" class="img-responsive">
+        <div class="service-card">
+          <i class="fas fa-camera"></i>
+          <h4>Sewa Fotografer</h4>
+          <p>Sesi foto profesional di studio</p>
+          <p class="price">Mulai Rp 300.000/jam</p>
         </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-      <h2 class="section-title">Pertanyaan Umum</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question">
-            Berapa lama durasi penyewaan?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Durasi minimal penyewaan adalah 1 hari (24 jam). Maksimal penyewaan 7 hari dengan kemungkinan perpanjangan jika kostum tersedia.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            Bagaimana jika kostum rusak?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Kerusakan minor seperti jahitan lepas tidak dikenakan biaya. Untuk kerusakan berat akan dikenakan biaya perbaikan sesuai tingkat kerusakan setelah dilakukan inspeksi.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            Apakah menyediakan aksesoris tambahan?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Ya, kami menyediakan paket lengkap termasuk wig, weapon props, dan aksesoris dengan tambahan biaya 30% dari harga sewa kostum.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            Bagaimana sistem pembayaran?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Pembayaran dilakukan 50% saat booking dan 50% sebelum pengambilan kostum. Kami menerima transfer bank, e-wallet, dan COD (khusus area Jabodetabek).</p>
-          </div>
+        <div class="service-card">
+          <i class="fas fa-truck"></i>
+          <h4>Pengantaran</h4>
+          <p>Gratis ongkir dalam kota (min. sewa 3 hari)</p>
+          <p class="price">*Syarat berlaku</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+      </section>
 
-    <!-- Testimoni -->
-    <section class="testimonial-section">
-      <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+      <section id="faq" class="faq-section">
+        <h2 class="section-title"><i class="fas fa-question-circle"></i> Pertanyaan Umum</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Berapa lama minimal sewa kostum?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Minimal sewa adalah 2 hari. Untuk event khusus seperti convention bisa nego untuk sewa harian.</p>
+            </div>
           </div>
-          <p class="testimonial-text">"Kualitas kostumnya sangat bagus, detailnya akurat dan bahannya nyaman dipakai seharian. Bakal sewa lagi disini!"</p>
-          <p class="testimonial-author">- Rina, Cosplayer</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Apakah ada biaya deposit?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Ya, kami meminta deposit sebesar 30% dari total biaya sewa sebagai jaminan.</p>
+            </div>
           </div>
-          <p class="testimonial-text">"Pelayanannya cepat respon, kostum datang tepat waktu dan dalam kondisi bersih. Harga juga lebih murah dibanding tempat lain."</p>
-          <p class="testimonial-author">- Andi, Event Organizer</p>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Bagaimana jika kostum rusak?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Kerusakan ringan tidak dikenakan biaya. Untuk kerusakan berat akan dibebankan biaya perbaikan maksimal 50% dari harga sewa.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Apakah menyediakan jasa makeup?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Kami bekerjasama dengan makeup artist profesional dengan harga khusus untuk pelanggan kami.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </div>
+  </div>
 
-  <footer class="main-footer">
+  <footer class="footer">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>Pungkicosrent</h3>
-        <p>Solusi rental kostum cosplay berkualitas dengan harga terjangkau.</p>
+      <div class="footer-section about">
+        <h3>Tentang Kami</h3>
+        <p>Pungki Cosplay menyediakan kostum cosplay berkualitas tinggi sejak 2015. Lebih dari 5000 penyewaan sukses!</p>
+        <div class="contact">
+          <span><i class="fas fa-phone"></i> 0812-3456-7890</span>
+          <span><i class="fas fa-envelope"></i> info@pungkicosplay.com</span>
+        </div>
       </div>
-      <div class="footer-section">
-        <h3>Kontak Kami</h3>
-        <p><i class="fas fa-envelope"></i> cs@punkgicosrent.id</p>
-        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-        <p><i class="fas fa-map-marker-alt"></i> Jl. Cosplay No. 123, Jakarta</p>
+      <div class="footer-section links">
+        <h3>Link Cepat</h3>
+        <ul>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#catalog">Katalog</a></li>
+          <li><a href="#profit">Keuntungan</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
       </div>
-      <div class="footer-section">
-        <h3>Jam Operasional</h3>
-        <p>Senin - Jumat: 09.00 - 18.00</p>
-        <p>Sabtu: 10.00 - 15.00</p>
-        <p>Minggu: Libur</p>
+      <div class="footer-section social">
+        <h3>Follow Kami</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="newsletter">
+          <p>Dapatkan promo khusus:</p>
+          <input type="email" placeholder="Email Anda">
+          <button>Subscribe</button>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Pungkicosrent. Semua hak dilindungi.</p>
-      <div class="social-media">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-      </div>
+      &copy; 2025 Pungki Cosplay Rental | All Rights Reserved
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <div id="costume-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    
+    <div class="modal-image-container">
+      <img id="modal-main-image" src="" alt="" class="modal-main-image">
+      <div id="thumbnail-container" class="thumbnails"></div>
+    </div>
+    
+    <div class="modal-info">
+      <h2 id="modal-costume-name"></h2>
+      <div class="modal-meta">
+        <span id="modal-category" class="modal-category"></span>
+        <span class="modal-rating"><i class="fas fa-star"></i> <span id="modal-rating"></span></span>
+        <span class="modal-rent-count"><i class="fas fa-history"></i> Disewa <span id="modal-rent-count"></span>x</span>
+      </div>
+      
+      <div class="size-selection">
+        <p>Ukuran:</p>
+        <div id="size-buttons" class="size-buttons"></div>
+      </div>
+      
+      <p id="modal-description" class="modal-description"></p>
+      
+      <div class="modal-includes">
+        <h3>Termasuk:</h3>
+        <ul id="modal-includes"></ul>
+      </div>
+      
+      <div class="modal-footer">
+        <span id="modal-price" class="modal-price"></span>
+        <button class="rent-button">Sewa Sekarang</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Data kostum yang benar
+  // Enhanced costume data with multiple images
+const costumesData = [
+  {
+    "id": 1,
+    "name": "Angela Annual Starlight",
+    "images": [
+      "costumes/Angela-annual-1.jpg",
+      "costumes/Angela-annual-2.jpg",
+      "costumes/Angela-annual-3.jpg",
+      "costumes/Angela-annual-detail.jpg"
+    ],
+    "category": "game",
+    "description": "Kostum premium karakter Angela dari Mobile Legends dengan desain Annual Starlight yang mewah. Dibuat dengan bahan berkualitas tinggi yang nyaman dipakai seharian.",
+    "includes": [
+      "Kostum utama",
+      "Wig karakter",
+      "Semua aksesoris",
+      "Sepatu size 37-39",
+      "Boneka Teddy bear",
+      "Tongkat dengan efek LED"
+    ],
+    "size": ["S", "M", "L"],
+    "price": 250000,
+    "onRent": false,
+    "rentCount": 18,
+    "rating": 4.8
+  },
+  // Add more costume data...
+];
+
+// Display costumes with filtering
+function displayCostumes(filter = 'all') {
+  const catalog = document.getElementById('catalog');
+  catalog.innerHTML = '';
+  
+  const searchTerm = document.getElementById('search-input').value.toLowerCase();
+  const categoryFilter = document.getElementById('category-filter').value;
+  const sizeFilter = document.getElementById('size-filter').value;
+  const priceFilter = document.getElementById('price-filter').value;
+  
+  costumesData.forEach(item => {
+    // Apply filters
+    if (searchTerm && !item.name.toLowerCase().includes(searchTerm)) continue;
+    if (categoryFilter !== 'all' && item.category !== categoryFilter) continue;
+    if (sizeFilter !== 'all' && !item.size.includes(sizeFilter)) continue;
+    if (priceFilter !== 'all') {
+      if (priceFilter === 'low' && item.price >= 200000) continue;
+      if (priceFilter === 'medium' && (item.price < 200000 || item.price > 500000)) continue;
+      if (priceFilter === 'high' && item.price <= 500000) continue;
+    }
+    
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-badge ${item.onRent ? 'rented' : 'available'}">
+        ${item.onRent ? 'Disewa' : 'Tersedia'}
+      </div>
+      <img src="${item.images[0]}" alt="${item.name}" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">${item.name}</h2>
+        <div class="card-meta">
+          <span class="card-category ${item.category}"><i class="${getCategoryIcon(item.category)}"></i> ${formatCategory(item.category)}</span>
+          <span class="card-rating"><i class="fas fa-star"></i> ${item.rating || '4.5'}</span>
+        </div>
+        <p class="card-description">${item.description.substring(0, 100)}...</p>
+        <div class="card-details">
+          <span><i class="fas fa-ruler-combined"></i> ${item.size.join(', ')}</span>
+          <span><i class="fas fa-history"></i> ${item.rentCount || 0}x disewa</span>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">Rp ${item.price.toLocaleString('id-ID')}/hari</span>
+          <button class="card-button ${item.onRent ? 'disabled' : ''}" data-id="${item.id}">
+            ${item.onRent ? 'Sedang Disewa' : 'Sewa Sekarang'}
+          </button>
+        </div>
+      </div>
+    `;
+    catalog.appendChild(card);
+  });
+  
+  // Add event listeners to buttons
+  document.querySelectorAll('.card-button:not(.disabled)').forEach(button => {
+    button.addEventListener('click', function() {
+      const costumeId = parseInt(this.getAttribute('data-id'));
+      showCostumeDetails(costumeId);
+    });
+  });
+}
+
+// Show costume details modal
+function showCostumeDetails(id) {
+  const costume = costumesData.find(item => item.id === id);
+  if (!costume) return;
+  
+  const modal = document.getElementById('costume-modal');
+  document.getElementById('modal-costume-name').textContent = costume.name;
+  document.getElementById('modal-category').textContent = formatCategory(costume.category);
+  document.getElementById('modal-category').className = `modal-category ${costume.category}`;
+  document.getElementById('modal-rating').textContent = costume.rating;
+  document.getElementById('modal-rent-count').textContent = costume.rentCount;
+  document.getElementById('modal-price').textContent = `Rp ${costume.price.toLocaleString('id-ID')}`;
+  document.getElementById('modal-description').textContent = costume.description;
+  
+  // Set main image
+  const mainImg = document.getElementById('modal-main-image');
+  mainImg.src = costume.images[0];
+  mainImg.alt = costume.name;
+  
+  // Create thumbnails
+  const thumbnailContainer = document.getElementById('thumbnail-container');
+  thumbnailContainer.innerHTML = '';
+  
+  costume.images.forEach((img, index) => {
+    const thumbnail = document.createElement('img');
+    thumbnail.src = img;
+    thumbnail.alt = `${costume.name} view ${index + 1}`;
+    thumbnail.className = 'thumbnail' + (index === 0 ? ' active' : '');
+    thumbnail.addEventListener('click', function() {
+      mainImg.src = this.src;
+      document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+    thumbnailContainer.appendChild(thumbnail);
+  });
+  
+  // Create size buttons
+  const sizeButtons = document.getElementById('size-buttons');
+  sizeButtons.innerHTML = '';
+  
+  costume.size.forEach(size => {
+    const button = document.createElement('button');
+    button.className = 'size-button';
+    button.textContent = size;
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.size-button').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+    sizeButtons.appendChild(button);
+  });
+  
+  // Set included items
+  const includesList = document.getElementById('modal-includes');
+  includesList.innerHTML = '';
+  
+  costume.includes.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    includesList.appendChild(li);
+  });
+  
+  // Show modal
+  modal.style.display = 'block';
+  
+  // Close modal when clicking X
+  document.querySelector('.close-modal').addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+}
+
+// Initialize filters
+document.getElementById('search-input').addEventListener('input', displayCostumes);
+document.getElementById('category-filter').addEventListener('change', displayCostumes);
+document.getElementById('size-filter').addEventListener('change', displayCostumes);
+document.getElementById('price-filter').addEventListener('change', displayCostumes);
+
+// Initial display
+// Hapus kurung kurawal yang tidak perlu
+document.addEventListener('DOMContentLoaded', function() {
+  displayCostumes();
+  // initChart(); // Hapus atau pastikan fungsi ini didefinisikan
+  setupFAQ();
+});
+
+// Fungsi utilitas
+function getCategoryIcon(category) {
+  const icons = {
+    'anime': 'fas fa-dragon',
+    'game': 'fas fa-gamepad',
+    'movie': 'fas fa-film',
+    'comic': 'fas fa-book-open'
+  };
+  return icons[category] || 'fas fa-tshirt';
+}
+
+function formatCategory(category) {
+  const names = {
+    'anime': 'Anime',
+    'game': 'Game',
+    'movie': 'Film',
+    'comic': 'Komik'
+  };
+  return names[category] || 'Lainnya';
+}
+
+function setupFAQ() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector('i');
+      
+      answer.classList.toggle('active');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    });
+  });
+}
+            </script>
 </body>
   </html>
