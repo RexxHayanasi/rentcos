@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detail Kostum - PungkiCosRent</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>PungkiCosRent</h1>
+    <nav>
+      <a href="produk.html">Kembali</a>
+    </nav>
+  </header>
+
+  <main class="container detail">
+    <div class="gallery" id="gallery"></div>
+    <div class="description" id="detail-deskripsi"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    loadDetail(id);
+  </script>
+</body>
+</html>
