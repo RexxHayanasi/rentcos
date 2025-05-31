@@ -2,27 +2,32 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Detail Kostum - PungkiCosRent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Kostum - Pungkicosrent</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-detail">
   <header>
-    <h1>PungkiCosRent</h1>
+    <h1>Pungkicosrent</h1>
     <nav>
-      <a href="produk.html">Kembali</a>
+      <a href="dashboard.html">Kembali</a>
     </nav>
   </header>
 
-  <main class="container detail">
-    <div class="gallery" id="gallery"></div>
-    <div class="description" id="detail-deskripsi"></div>
+  <main id="detail-container">
+    <div class="detail-wrapper">
+      <div class="gambar-section">
+        <img id="gambar-utama" src="" alt="Gambar Kostum" class="gambar-utama" />
+        <div id="galeri" class="galeri-gambar"></div>
+      </div>
+      <div id="deskripsi" class="deskripsi-section"></div>
+    </div>
   </main>
 
+  <footer>
+    <p>&copy; 2025 Pungkicosrent.</p>
+  </footer>
+
   <script src="script.js"></script>
-  <script>
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id");
-    loadDetail(id);
-  </script>
 </body>
 </html>
