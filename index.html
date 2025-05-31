@@ -3,26 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pungkicosrent - Dashboard</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Pungkicosrent - Rental Cosplay Profesional</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="page-dashboard">
-  <header>
-    <h1>Pungkicosrent</h1>
-    <nav>
-      <a href="dashboard.html">Beranda</a>
-    </nav>
+  <header class="main-header">
+    <div class="header-content">
+      <h1 class="logo">Pungkicosrent</h1>
+      <p class="tagline">Rental Kostum Cosplay Berkualitas Premium</p>
+      <nav class="main-nav">
+        <a href="dashboard.html" class="active"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#produk"><i class="fas fa-tshirt"></i> Kostum</a>
+        <a href="#tentang"><i class="fas fa-info-circle"></i> Tentang Kami</a>
+        <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="#promo"><i class="fas fa-tag"></i> Promo</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>Daftar Kostum</h2>
-    <div id="produk-container" class="grid"></div>
+  <main class="dashboard-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Rental Kostum Cosplay Terlengkap & Terpercaya</h2>
+        <p>Dapatkan pengalaman cosplay terbaik dengan kostum berkualitas tinggi dan harga terjangkau</p>
+        <a href="#produk" class="cta-button">Lihat Katalog</a>
+      </div>
+    </section>
+
+    <!-- Keunggulan Kami -->
+    <section class="benefits">
+      <h2 class="section-title">Kenapa Memilih Pungkicosrent?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-star"></i>
+          <h3>Kualitas Premium</h3>
+          <p>Kostum dibuat dengan bahan impor berkualitas tinggi dan detail akurat</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-tags"></i>
+          <h3>Harga Kompetitif</h3>
+          <p>Harga sewa terjangkau dengan berbagai pilihan paket</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-broom"></i>
+          <h3>Perawatan Rutin</h3>
+          <p>Kostum selalu dicuci dan diperbaiki setelah setiap penyewaan</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Garansi Kepuasan</h3>
+          <p>Garansi 100% jika kostum tidak sesuai deskripsi</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daftar Kostum -->
+    <section id="produk" class="products">
+      <h2 class="section-title">Daftar Kostum Tersedia</h2>
+      <div class="filter-options">
+        <button class="filter-btn active">Semua</button>
+        <button class="filter-btn">Anime</button>
+        <button class="filter-btn">Game</button>
+        <button class="filter-btn">Film</button>
+        <button class="filter-btn">Original</button>
+      </div>
+      <div id="produk-container" class="grid"></div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="promo" class="promo-section">
+      <h2 class="section-title">Promo Spesial</h2>
+      <div class="promo-card">
+        <div class="promo-badge">HOT</div>
+        <h3>Paket 3 Hari Diskon 20%</h3>
+        <p>Sewa minimal 3 hari dapatkan diskon 20% untuk semua kostum</p>
+        <p class="promo-code">Gunakan kode: <strong>COS3DAY</strong></p>
+      </div>
+      <div class="promo-card">
+        <div class="promo-badge">NEW</div>
+        <h3>Member Baru Gratis 1 Hari</h3>
+        <p>Penyewa pertama mendapatkan tambahan 1 hari gratis</p>
+        <p class="promo-code">Gunakan kode: <strong>NEWCOS</strong></p>
+      </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="about-section">
+      <h2 class="section-title">Tentang Pungkicosrent</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Pungkicosrent adalah penyedia jasa rental kostum cosplay profesional yang telah berdiri sejak 2018. Kami berkomitmen menyediakan kostum dengan kualitas terbaik dan detail yang akurat.</p>
+          <p>Kostum kami dibuat oleh tailor berpengalaman menggunakan bahan impor seperti katun Jepang, brokat Korea, dan bahan premium lainnya yang nyaman dipakai.</p>
+          <ul class="about-features">
+            <li><i class="fas fa-check"></i> Lebih dari 500+ koleksi kostum</li>
+            <li><i class="fas fa-check"></i> Update koleksi rutin setiap bulan</li>
+            <li><i class="fas fa-check"></i> Sistem booking online 24 jam</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="https://via.placeholder.com/400x300" alt="Workshop Pungkicosrent" class="img-responsive">
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <h2 class="section-title">Pertanyaan Umum</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            Berapa lama durasi penyewaan?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Durasi minimal penyewaan adalah 1 hari (24 jam). Maksimal penyewaan 7 hari dengan kemungkinan perpanjangan jika kostum tersedia.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Bagaimana jika kostum rusak?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Kerusakan minor seperti jahitan lepas tidak dikenakan biaya. Untuk kerusakan berat akan dikenakan biaya perbaikan sesuai tingkat kerusakan setelah dilakukan inspeksi.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Apakah menyediakan aksesoris tambahan?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Ya, kami menyediakan paket lengkap termasuk wig, weapon props, dan aksesoris dengan tambahan biaya 30% dari harga sewa kostum.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Bagaimana sistem pembayaran?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Pembayaran dilakukan 50% saat booking dan 50% sebelum pengambilan kostum. Kami menerima transfer bank, e-wallet, dan COD (khusus area Jabodetabek).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="testimonial-section">
+      <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Kualitas kostumnya sangat bagus, detailnya akurat dan bahannya nyaman dipakai seharian. Bakal sewa lagi disini!"</p>
+          <p class="testimonial-author">- Rina, Cosplayer</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">"Pelayanannya cepat respon, kostum datang tepat waktu dan dalam kondisi bersih. Harga juga lebih murah dibanding tempat lain."</p>
+          <p class="testimonial-author">- Andi, Event Organizer</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Pungkicosrent. Semua hak dilindungi.</p>
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Pungkicosrent</h3>
+        <p>Solusi rental kostum cosplay berkualitas dengan harga terjangkau.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Kontak Kami</h3>
+        <p><i class="fas fa-envelope"></i> cs@punkgicosrent.id</p>
+        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Cosplay No. 123, Jakarta</p>
+      </div>
+      <div class="footer-section">
+        <h3>Jam Operasional</h3>
+        <p>Senin - Jumat: 09.00 - 18.00</p>
+        <p>Sabtu: 10.00 - 15.00</p>
+        <p>Minggu: Libur</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pungkicosrent. Semua hak dilindungi.</p>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
-</html>
+  </html>
